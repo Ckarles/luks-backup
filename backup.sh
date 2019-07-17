@@ -4,7 +4,7 @@ VGNAME="tkp_bk"
 VOLUME_LABEL="tkp_bk_all"
 VOLUME_PATH="/dev/disk/by-label/${VOLUME_LABEL}"
 
-declare -a parts
+declare -a \
 parts=(
   "suse_root"
   "suse_boot"
@@ -12,7 +12,7 @@ parts=(
   "shared_home"
 )
 
-declare -A part_mount
+declare -A \
 part_mount=(
   ["suse_root"]="/"
   ["suse_boot"]="/boot/"
@@ -20,7 +20,7 @@ part_mount=(
   ["shared_home"]="/mnt/shared_home/"
 )
 
-declare -A part_extraopts
+declare -A \
 part_extraopts=(
   ["shared_home"]="--exclude=steamapps/"
 )
