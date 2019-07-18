@@ -57,9 +57,15 @@ mkdir -pv /mnt/backup
 for p in ${parts[@]}; do
   m=${part_mount[${p}]}
   x=${part_extraopts[${p}]}
-  
+
   mount -v /dev/${VGNAME}/${p} /mnt/backup${m}
-  rsync -aAHXx --delete --no-inc-recursive --info=progress2 ${x} ${m} /mnt/backup${m}
+  rsync -aAHXx \
+    --delete \
+    --no-inc-recursive \
+    --info=progress2 \
+    --human-readable \
+    ${x} \
+    ${m} /mnt/backup${m}
 
 done
 
