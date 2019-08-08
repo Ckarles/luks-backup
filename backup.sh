@@ -69,6 +69,9 @@ for p in ${parts[@]}; do
 
 done
 
+# necessary sleep to wait for the unlock of the volumes
+sleep 1
+
 umount -Rv /mnt/backup
 rmdir -v /mnt/backup
 
